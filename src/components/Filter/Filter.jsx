@@ -1,6 +1,6 @@
 import { Label, Input } from './Filter.styled';
 import { useDispatch } from 'react-redux';
-import { setQuery } from 'redux/contactsSlice';
+import { setQuery } from 'redux/contacts/contactsSlice';
 
 const Filter = () => {
 

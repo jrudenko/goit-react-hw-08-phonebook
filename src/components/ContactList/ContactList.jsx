@@ -1,11 +1,11 @@
 import ContactItem from 'components/ContactItem';
 import React from 'react';
 import { useEffect } from 'react';
-import { List, } from './ContactList.styled';
+import { List } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 // import Loader from 'components/Loader';
-import { fetchContacts } from 'redux/thunk';
-import {getVisibleContacts} from "redux/contactsSelectors"
+import { fetchContacts } from 'redux/contacts/contactOperations';
+import {getVisibleContacts} from "redux/contacts/contactsSelectors"
 
 function ContactList() {
   const dispatch = useDispatch();

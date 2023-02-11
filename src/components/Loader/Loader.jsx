@@ -1,13 +1,23 @@
+// import { AtomSpinner } from 'react-epic-spinners'
+// import {LoaderContainer, LoaderBackground, Loader} from './Loader.styled';
+// // import PropTypes from 'prop-types';
 
-import { Oval } from 'react-loader-spinner';
-import { LoaderContainer } from './Loader.styled';
+// const Loader = ({ color, size }) => {
+//   return (
+//     <LoaderBackground>
+//       <LoaderContainer>
+//         <HollowDotsSpinner color={color} size={size} />
+//       </LoaderContainer>
+//     </LoaderBackground>
+//   );
+// };
 
-const Loader = () => {
-  return (
-    <LoaderContainer role="alert">
-      <Oval strokeColor="#232323" />
-    </LoaderContainer>
-  );
-};
+// // Loader.propTypes = {
+// //   color: PropTypes.string.isRequired,
+// //   size: PropTypes.number.isRequired,
+// // };
 
-export default Loader;
+// export default Loader;
+
+//
+

@@ -1,7 +1,7 @@
 import { Item, Button } from './ContactItem.styled'
 // import { RotatingLines } from 'react-loader-spinner';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/thunk';
+import { deleteContact } from 'redux/contacts/contactOperations';
 
 function ContactItem({ id, name, number}) {
     const dispatch = useDispatch();

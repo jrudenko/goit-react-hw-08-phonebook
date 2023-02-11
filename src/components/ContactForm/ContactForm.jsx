@@ -3,10 +3,10 @@ import { Form, Label, Input, Button } from './ContactForm.styled';
 import toast, { Toaster } from 'react-hot-toast';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from "redux/thunk";
+import { addContact } from "redux/contacts/contactOperations";
 import { nanoid } from 'nanoid'
 
-import { getContacts } from "redux/contactsSelectors";
+import { getContacts } from "redux/contacts/contactsSelectors";
 
 
 
