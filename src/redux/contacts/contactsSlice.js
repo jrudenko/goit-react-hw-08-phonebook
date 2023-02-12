@@ -1,50 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { contactsInitstate } from './contactsInitState';
-import { fetchContacts, addContact, deleteContact } from './contactOperations';
 
-const handlePending = state => {
-  state.isLoading = true;
-};
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
+const initialState = {
+  filter: '',
 };
 
-const contactsSlice = createSlice({
+export const contactsSlise = createSlice({
   name: 'contacts',
-  initialState: contactsInitstate,
+  initialState,
   reducers: {
-    setQuery: (state, action) => {
-      state.query = action.payload;
+    filter(state, action) {
+      state.filter = action.payload;
     },
-  },
-  extraReducers: {
-    [fetchContacts.pending]: handlePending,
-    [fetchContacts.fulfilled]: (state, { payload }) => {
-      state.isLoading = false;
-      state.error = null;
-      state.contacts = payload;
-    },
-    [fetchContacts.rejected]: handleRejected,
-    [addContact.pending]: handlePending,
-    [addContact.fulfilled]: (state, { payload }) => {
-      state.isLoading = false;
-      state.error = null;
-      state.contacts.push(payload);
-    },
-    [addContact.rejected]: handleRejected,
-    [deleteContact.pending]: handlePending,
-    [deleteContact.fulfilled]: (state, { payload }) => {
-      state.isLoading = false;
-      state.error = null;
-      state.contacts = state.contacts.filter(
-        contact => contact.id !== payload.id
-      );
-    },
-    [deleteContact.rejected]: handleRejected,
   },
 });
 
-export const { setQuery } = contactsSlice.actions;
+export const ReducerFilter = contactsSlise.reducer;
 
-export default contactsSlice.reducer;
+export const { filter } = contactsSlise.actions;

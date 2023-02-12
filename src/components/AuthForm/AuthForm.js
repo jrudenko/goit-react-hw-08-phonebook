@@ -1,26 +1,11 @@
-import { NavLink } from 'react-router-dom';
-import { Auth } from './AuthForm.styled';
+import { Link } from './AuthForm.styled';
 
 function AuthForm() {
   return (
-    <Auth>
-      <NavLink
-        to="/login"
-        // style={({ isActive }) => {
-        //   isActive ? [BtnForm, Active].join(' ') : BtnForm;
-        // }}
-      >
-        Login
-      </NavLink>
-      <NavLink
-        to="/register"
-        // style={({ isActive }) => {
-        //   isActive ? [BtnForm, Active].join(' ') : styles.button;
-        // }}
-      >
-        Register
-      </NavLink>
-    </Auth>
+    <nav>
+      <Link to="/register">Registration</Link>
+      <Link to="/login">Login</Link>
+    </nav>
   );
 }
 export default AuthForm;

@@ -1,39 +1,39 @@
 import ContactItem from 'components/ContactItem';
 import React from 'react';
-import { useEffect } from 'react';
-import { List } from './ContactList.styled';
-import { useSelector, useDispatch } from 'react-redux';
-// import Loader from 'components/Loader';
-import { fetchContacts } from 'redux/contacts/contactOperations';
-import {getVisibleContacts} from "redux/contacts/contactsSelectors"
+import Loader from 'components/Loader';
+import { List, Error } from './ContactList.styled';
+import { useSelector} from 'react-redux';
+import { useFetchContactsQuery} from 'redux/contacts/contactsApi';
+import { getFilter } from 'redux/contacts/contactsSelectors';
 
-function ContactList() {
-  const dispatch = useDispatch();
+const ContactList = () => {
+  const { data: contacts, error, isLoading } = useFetchContactsQuery();
 
-  const filteredContacts = useSelector(getVisibleContacts);
+  const filter = useSelector(getFilter);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-        
-        return (
-    <>
-      {/* {isLoading && <ContactListMesage>Loading contacts...</ContactListMesage>}
-      {error && <ContactListMesage>{error}</ContactListMesage>} */}
-      {/* {items.length !== 0 && ( */}
-        <List>
-            {filteredContacts.map(({ id, name, phone }) => (
-                <ContactItem
-                    key={id}
-                    id={id}
-                    name={name}
-                    number={phone}
-                />
-                
-            ))}
-        </List>
-      {/* )} */}
-    </>
+  const filterContacts = () => {
+    return (
+      contacts &&
+      contacts.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase())
+      )
+    );
+  };
+
+  const contactList = filterContacts();
+  const renderContacts = contacts && !isLoading && contactList.length > 0;
+
+  return (
+    <List>
+      {renderContacts &&
+        contactList.map(({ id, name, number }) => (
+          <ContactItem id={id} key={id} name={name} number={number} />
+        ))}
+      {isLoading && <Loader />}
+      {error && (
+        <Error>Try adding phone details or contact your administrator</Error>
+      )}
+    </List>
   );
 };
 

@@ -20,10 +20,10 @@ export const Item = styled.li`
 export const Button = styled.button`
   margin: auto;
   cursor: pointer;
+  text-align: center;
   width: 100px;
-    height: 30px;
-    font-size: 16px;
-    text-align: center;
+  height: 32px;
+  font-size: 16px;    
 
   border-radius: 4px;
   border: 1px solid #986969;

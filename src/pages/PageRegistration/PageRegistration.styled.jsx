@@ -43,7 +43,7 @@ display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: #4caf50;
+  background-color: #2f302f;
   width: 100px;
   height: 32px;
   margin: 0 auto;
@@ -57,5 +57,5 @@ display: flex;
 
 &:hover,
 &:focus {
-  background-color: #56ca5c;}
+  background-color: #818381;}
 `;

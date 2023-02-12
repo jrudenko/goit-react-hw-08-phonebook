@@ -7,20 +7,17 @@ export const List = styled.ul`
   width: 360px;
 `;
 
-export const ContactItem = styled.li`
-    display: flex;
-    align-items: center;
-`;
+// export const List = styled.ul`
+//   display: flex;
+//   flex-direction: column;
+//   padding: 0;
+// `;
 
-export const ContactBtn = styled.button`
-  width: 60px;
-  height: 30px;
+export const Error = styled.h2`
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
   text-align: center;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
-  border-radius: 5px;
-  border: none;
-  &:hover,
-  &:focus {
-    background-color: #188ce8;
-  }
+  color: #232323;
 `;
