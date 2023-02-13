@@ -8,8 +8,21 @@ function Navigation() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   return (
+
+
     <NavLink>
-      <Link to="/">Home</Link>{isLoggedIn && <Link to="/contacts">Contacts</Link>}
+      <Link to="/" exact >
+        Home
+      </Link>
+
+      {isLoggedIn && (
+        <Link
+          to="/contacts"
+          exact        
+        >
+          Contacts
+        </Link>
+      )}
     </NavLink>
   );
 }

@@ -3,12 +3,14 @@ import { Form, Label, Input, Button } from './ContactForm.styled';
 import toast, { Toaster } from 'react-hot-toast';
 import { nanoid } from 'nanoid'
 import { useFetchContactsQuery, useCreateContactMutation } from 'redux/contacts/contactsApi';
+import Loader from 'components/Loader';
 
 function ContactForm  () { 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const { data: contacts } = useFetchContactsQuery();
+  const { data: contacts, isLoading } = useFetchContactsQuery();
   const [createContact] = useCreateContactMutation();
+
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -29,9 +31,9 @@ function ContactForm  () {
     if (!isAdding) {
       createContact(data);
       reset();
-      toast.success(`Contact, ${name} successfully added`);
+      toast.success(`😃 Contact, ${name} successfully added`);
     } else {
-      toast.error(`${data.name} is already in contacts.`);
+      toast.error(`😏${data.name} is already in contacts.`);
     }
   };
 
@@ -86,6 +88,7 @@ function ContactForm  () {
 
         <Button type="submit" >Add contact</Button>
         <Toaster />
+        {isLoading && <Loader />}
       </Form>
     );
 

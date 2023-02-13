@@ -1,4 +1,4 @@
-import { Label, Input } from './Filter.styled';
+import { Label, Input, TitleFilter} from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { filter } from 'redux/contacts/contactsSlice';
 import { getFilter } from 'redux/contacts/contactsSelectors';
@@ -12,7 +12,7 @@ const Filter = () => {
   }
     return (
         <Label htmlFor="" value={filterName}>
-            <p>Find contacts by name</p>
+            <TitleFilter>Find contacts by name</TitleFilter>
             <Input type="text" onChange={onChangeFilter} placeholder="Enter search name" />
         </Label>
     );

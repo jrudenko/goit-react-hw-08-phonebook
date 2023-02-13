@@ -3,15 +3,8 @@ import styled from '@emotion/styled'
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
-  width: 360px;
+  width: 100%;
 `;
-
-// export const List = styled.ul`
-//   display: flex;
-//   flex-direction: column;
-//   padding: 0;
-// `;
 
 export const Error = styled.h2`
   font-size: 24px;

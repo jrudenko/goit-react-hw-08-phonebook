@@ -6,6 +6,7 @@ import PublicRoute from 'routes/PublicRoutes';
 import { authOperations, authSelectors } from 'redux/auth';
 import Loader from 'components/Loader';
 import AppBar from 'components/AppBar';
+import { ToastContainer } from 'react-toastify';
 
 const PageHome = lazy(() => import('pages/PageHome'));
 const PageRegistration = lazy(() => import('pages/PageRegistration'));
@@ -59,10 +60,10 @@ const App = () => {
                   </PrivateRoute>
                 }
               />
-              <Route path="*" element={<Navigate to="/" />} />
-              
+              <Route path="*" element={<Navigate to="/" />} />              
             </Routes>
           </Suspense>
+          <ToastContainer autoClose={3700} position="top-center" />
         </>
       )}
     </>

@@ -6,7 +6,7 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   padding: 12;
   font-weight: 700;
-  color: #0b0209;
+  color: var(--primaryTextColor);
   transition: all 0.5s ease;
   
   &:not(:last-child){
@@ -14,6 +14,6 @@ export const Link = styled(NavLink)`
   }
   text-shadow: 2px 2px 4px blue;
   &.active {
-    color:  #e294ba;
+    color: var(--secondaryTextColor);
   }
 `;

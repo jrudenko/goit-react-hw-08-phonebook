@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { authSelectors } from 'redux/auth';
-import {PageHomeSection, PageHomeTitle, PageHomeText } from './PageHome.styled';
+import {PageHomeSection, PageHomeTitle, PageHomeText, PageHomeTitle2 } from './PageHome.styled';
 
 function PageHome() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -11,10 +11,10 @@ function PageHome() {
         <Navigate to="/contacts" />
       ) : (
         <PageHomeSection>
-          <PageHomeTitle>Phonebook app</PageHomeTitle>
-          <PageHomeText>
-            Please register or log in to start to work with the app.
-          </PageHomeText>
+            <PageHomeTitle>Welcome 👋</PageHomeTitle>
+            <PageHomeTitle2>Now you will exactly not forget your contacts!</PageHomeTitle2>
+          <PageHomeText> Please, <b>Sign up</b> or <b>Log in</b> to have access to the
+            Phonebook!</PageHomeText>
         </PageHomeSection>
       )}
     </>

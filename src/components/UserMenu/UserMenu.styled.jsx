@@ -14,7 +14,9 @@ margin-right: 20px;
 export const MenuTitle  = styled.p`
 font-size: 16px;
 margin: 0;
-color: #5c054f;
+color: var(--primaryTextColor);
+transition: all 0.5s ease;
+text-shadow: 2px 2px 4px blue;
 `;
 
 
@@ -22,22 +24,20 @@ export const MenuBtn  = styled.button`
 display: flex;
 align-items: center;
 justify-content: center;
-color: #151414;
-border: 1px solid #986969;
-background-color: #E0D2D5;
 width: 100px;
-height: 32px;
-margin-left: 10px;
-padding: 5px;
-cursor: pointer;
-text-decoration: none;
-border: none;
-border-radius: 4px;
-font-size: 16px;
-/* transition: background-color ease-in-out 300ms; */
+  height: 100%;
+  padding: 5px;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset;
+  border: 2px solid rgb(252, 6, 6);
+  background-color: #eb1d1d;
+
   &:hover,
   &:focus {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgb(114, 113, 114);
   }
 `;
 

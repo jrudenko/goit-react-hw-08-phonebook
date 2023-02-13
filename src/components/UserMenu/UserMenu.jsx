@@ -6,13 +6,11 @@ import {MenuContainer, MenuBox, MenuTitle, MenuBtn } from './UserMenu.styled';
 function UserMenu() {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
-  const email = useSelector(authSelectors.getUserEmail);
 
   return (
     <MenuContainer>
       <MenuBox>
-        <MenuTitle>Current user: {name}</MenuTitle>
-        <MenuTitle>{email}</MenuTitle>
+        <MenuTitle> Welcome, {name}</MenuTitle>
       </MenuBox>
       <MenuBtn
         type="button"
