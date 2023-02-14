@@ -30,6 +30,7 @@ const App = () => {
             <Routes>
               <Route
                 path="/"
+                exact
                 element={
                   <PublicRoute>
                     <PageHome />

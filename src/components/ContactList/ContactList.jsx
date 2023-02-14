@@ -21,10 +21,13 @@ const ContactList = () => {
   };
 
   const contactList = filterContacts();
-  const renderContacts = contacts && !isLoading && contactList.length > 0;
+  const renderContacts = contacts && contactList.length > 0;
+ 
+
 
   return (
-    <List>
+    <>
+      <List>
       {renderContacts &&
         contactList.map(({ id, name, number }) => (
           <ContactItem id={id} key={id} name={name} number={number} />
@@ -34,6 +37,9 @@ const ContactList = () => {
         <Error>Try adding phone details or contact your administrator</Error>
       )}
     </List>
+      
+  
+    </>
   );
 };
 
